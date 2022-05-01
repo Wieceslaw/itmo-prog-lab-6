@@ -1,0 +1,124 @@
+2022-05-01 14:35:49,764 INFO Server [main] Client request:Request{command='help', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 14:36:31,675 ERROR u.RequestHandler [main] Request error
+java.lang.NullPointerException: Элемента с таким ID не найдено.
+	at commands.Update.execute(Update.java:23) ~[classes/:?]
+	at util.RequestHandler.executeRequest(RequestHandler.java:49) ~[classes/:?]
+	at Server.run(Server.java:46) ~[classes/:?]
+	at Server.main(Server.java:67) ~[classes/:?]
+2022-05-01 14:36:31,680 INFO Server [main] Client request:Request{command='update', args=[-1], fieldsWrapper=FieldsWrapper{name='aboba', x=12.0, y=12.0, annualTurnover=12, employeesCount=12, organizationType='null', street='null', zipCode='null'}, isSilent=false}
+2022-05-01 14:46:25,900 INFO Server [main] Client request:Request{command='help', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 14:46:27,513 INFO Server [main] Client request:Request{command='show', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 14:46:31,213 INFO Server [main] Client request:Request{command='info', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 14:46:33,509 INFO Server [main] Client request:Request{command='exit', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 17:57:50,896 INFO Server [main] Client request:Request{command='help', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 17:57:58,987 INFO Server [main] Client request:Request{command='show', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 17:58:00,252 INFO Server [main] Client request:Request{command='info', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 17:58:22,192 INFO Server [main] Client request:Request{command='show', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 17:58:24,150 INFO Server [main] Client request:Request{command='info', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 17:59:00,349 INFO Server [main] Client request:Request{command='help', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 17:59:13,062 INFO Server [main] Client request:Request{command='execute_script', args=[res/scripts/cycles/script1.txt], fieldsWrapper=null, isSilent=false}
+2022-05-01 17:59:13,064 INFO Server [main] Client request:Request{command='execute_script', args=[res/scripts/cycles/script1.txt], fieldsWrapper=null, isSilent=false}
+2022-05-01 17:59:13,064 INFO Server [main] Client request:Request{command='execute_script', args=[res/scripts/cycles/script2.txt], fieldsWrapper=null, isSilent=false}
+2022-05-01 17:59:13,066 INFO Server [main] Client request:Request{command='execute_script', args=[res/scripts/cycles/script1.txt], fieldsWrapper=null, isSilent=false}
+2022-05-01 17:59:13,067 INFO Server [main] Client request:Request{command='execute_script', args=[res/scripts/cycles/script2.txt], fieldsWrapper=null, isSilent=false}
+2022-05-01 17:59:13,067 INFO Server [main] Client request:Request{command='execute_script', args=[res/scripts/cycles/script3.txt], fieldsWrapper=null, isSilent=false}
+2022-05-01 17:59:13,068 INFO Server [main] Client request:Request{command='execute_script', args=[res/scripts/cycles/script4.txt], fieldsWrapper=null, isSilent=false}
+2022-05-01 17:59:13,072 INFO Server [main] Client request:Request{command='execute_script', args=[res/scripts/cycles/script1.txt], fieldsWrapper=null, isSilent=false}
+2022-05-01 17:59:13,073 INFO Server [main] Client request:Request{command='help', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 17:59:13,073 INFO Server [main] Client request:Request{command='info', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 17:59:13,074 INFO Server [main] Client request:Request{command='execute_script', args=[res/scripts/cycles/script7.txt], fieldsWrapper=null, isSilent=false}
+2022-05-01 17:59:13,074 INFO Server [main] Client request:Request{command='execute_script', args=[res/scripts/cycles/script6.txt], fieldsWrapper=null, isSilent=false}
+2022-05-01 17:59:13,075 INFO Server [main] Client request:Request{command='execute_script', args=[res/scripts/cycles/script5.txt], fieldsWrapper=null, isSilent=false}
+2022-05-01 17:59:13,075 INFO Server [main] Client request:Request{command='execute_script', args=[res/scripts/cycles/script1.txt], fieldsWrapper=null, isSilent=false}
+2022-05-01 18:01:19,216 INFO Server [main] Client request:Request{command='help', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 18:01:34,597 INFO Server [main] Client request:Request{command='help', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 18:01:34,598 INFO Server [main] Client request:Request{command='info', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 18:01:50,957 INFO Server [main] Client request:Request{command='help', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 18:01:50,958 INFO Server [main] Client request:Request{command='info', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 18:01:50,970 INFO Server [main] Client request:Request{command='show', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 18:01:51,003 INFO Server [main] Client request:Request{command='add', args=[], fieldsWrapper=FieldsWrapper{name='Name', x=1.0, y=2.0, annualTurnover=3, employeesCount=4, organizationType='PUBLIC', street='Street', zipCode='zipCode'}, isSilent=false}
+2022-05-01 18:01:51,005 INFO Server [main] Client request:Request{command='show', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 18:01:51,008 INFO Server [main] Client request:Request{command='info', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 18:01:51,010 INFO Server [main] Client request:Request{command='update', args=[1], fieldsWrapper=FieldsWrapper{name='Name2', x=1.0, y=2.0, annualTurnover=3, employeesCount=4, organizationType='TRUST', street='Street2', zipCode='zipCode2'}, isSilent=false}
+2022-05-01 18:01:51,011 INFO Server [main] Client request:Request{command='show', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 18:01:51,015 INFO Server [main] Client request:Request{command='info', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 18:01:51,015 INFO Server [main] Client request:Request{command='remove_by_id', args=[1], fieldsWrapper=null, isSilent=false}
+2022-05-01 18:01:51,016 INFO Server [main] Client request:Request{command='show', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 18:01:51,019 INFO Server [main] Client request:Request{command='info', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 18:01:51,020 INFO Server [main] Client request:Request{command='clear', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 18:01:51,021 INFO Server [main] Client request:Request{command='show', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 18:01:51,022 INFO Server [main] Client request:Request{command='info', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 18:01:51,024 INFO Server [main] Client request:Request{command='add', args=[], fieldsWrapper=FieldsWrapper{name='Name', x=1.0, y=2.0, annualTurnover=3, employeesCount=4, organizationType='PUBLIC', street='Street', zipCode='zipCode'}, isSilent=false}
+2022-05-01 18:01:51,025 INFO Server [main] Client request:Request{command='show', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 18:01:51,026 INFO Server [main] Client request:Request{command='info', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 18:04:11,844 INFO Server [main] Client request:Request{command='help', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 18:04:29,092 INFO Server [main] Client request:Request{command='help', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 18:04:29,093 INFO Server [main] Client request:Request{command='info', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 18:04:29,102 INFO Server [main] Client request:Request{command='show', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 18:04:29,136 INFO Server [main] Client request:Request{command='add', args=[], fieldsWrapper=FieldsWrapper{name='Name', x=1.0, y=2.0, annualTurnover=3, employeesCount=4, organizationType='PUBLIC', street='Street', zipCode='zipCode'}, isSilent=false}
+2022-05-01 18:04:29,137 INFO Server [main] Client request:Request{command='show', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 18:04:29,140 INFO Server [main] Client request:Request{command='info', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 18:04:29,142 INFO Server [main] Client request:Request{command='update', args=[1], fieldsWrapper=FieldsWrapper{name='Name2', x=1.0, y=2.0, annualTurnover=3, employeesCount=4, organizationType='TRUST', street='Street2', zipCode='zipCode2'}, isSilent=false}
+2022-05-01 18:04:29,143 INFO Server [main] Client request:Request{command='show', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 18:04:29,147 INFO Server [main] Client request:Request{command='info', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 18:04:29,148 INFO Server [main] Client request:Request{command='remove_by_id', args=[1], fieldsWrapper=null, isSilent=false}
+2022-05-01 18:04:29,150 INFO Server [main] Client request:Request{command='show', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 18:04:29,155 INFO Server [main] Client request:Request{command='info', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 18:04:29,155 INFO Server [main] Client request:Request{command='clear', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 18:04:29,156 INFO Server [main] Client request:Request{command='show', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 18:04:29,157 INFO Server [main] Client request:Request{command='info', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 18:04:29,158 INFO Server [main] Client request:Request{command='add', args=[], fieldsWrapper=FieldsWrapper{name='Name', x=1.0, y=2.0, annualTurnover=3, employeesCount=4, organizationType='PUBLIC', street='Street', zipCode='zipCode'}, isSilent=false}
+2022-05-01 18:04:29,159 INFO Server [main] Client request:Request{command='show', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 18:04:29,160 INFO Server [main] Client request:Request{command='info', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 18:04:29,162 INFO Server [main] Client request:Request{command='add_if_max', args=[], fieldsWrapper=FieldsWrapper{name='Name1', x=1.0, y=2.0, annualTurnover=3, employeesCount=1000, organizationType='PUBLIC', street='Street1', zipCode='zipCode1'}, isSilent=false}
+2022-05-01 18:04:29,163 INFO Server [main] Client request:Request{command='show', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 18:04:29,165 INFO Server [main] Client request:Request{command='info', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 18:04:29,166 INFO Server [main] Client request:Request{command='add_if_max', args=[], fieldsWrapper=FieldsWrapper{name='Name2', x=1.0, y=2.0, annualTurnover=3, employeesCount=2, organizationType='PUBLIC', street='Street2', zipCode='zipCode2'}, isSilent=false}
+2022-05-01 18:04:29,168 INFO Server [main] Client request:Request{command='show', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 18:04:29,170 INFO Server [main] Client request:Request{command='info', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 18:04:29,171 INFO Server [main] Client request:Request{command='add_if_min', args=[], fieldsWrapper=FieldsWrapper{name='Name3', x=1.0, y=2.0, annualTurnover=3, employeesCount=100, organizationType='TRUST', street='Street3', zipCode='zipCode3'}, isSilent=false}
+2022-05-01 18:04:29,172 INFO Server [main] Client request:Request{command='show', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 18:04:29,175 INFO Server [main] Client request:Request{command='info', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 18:04:29,177 INFO Server [main] Client request:Request{command='add_if_min', args=[], fieldsWrapper=FieldsWrapper{name='Name4', x=1.0, y=2.0, annualTurnover=3, employeesCount=1, organizationType='PUBLIC', street='Street4', zipCode='zipCode4'}, isSilent=false}
+2022-05-01 18:04:29,178 INFO Server [main] Client request:Request{command='show', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 18:04:29,181 INFO Server [main] Client request:Request{command='info', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 18:05:29,637 INFO Server [main] Client request:Request{command='show', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 18:05:32,128 INFO Server [main] Client request:Request{command='help', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 18:05:43,939 INFO Server [main] Client request:Request{command='help', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 18:05:43,940 INFO Server [main] Client request:Request{command='info', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 18:05:43,943 INFO Server [main] Client request:Request{command='show', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 18:05:43,950 INFO Server [main] Client request:Request{command='add', args=[], fieldsWrapper=FieldsWrapper{name='Name', x=1.0, y=2.0, annualTurnover=3, employeesCount=4, organizationType='PUBLIC', street='Street', zipCode='zipCode'}, isSilent=false}
+2022-05-01 18:05:43,952 INFO Server [main] Client request:Request{command='show', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 18:05:43,955 INFO Server [main] Client request:Request{command='info', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 18:05:43,956 INFO Server [main] Client request:Request{command='update', args=[1], fieldsWrapper=FieldsWrapper{name='Name2', x=1.0, y=2.0, annualTurnover=3, employeesCount=4, organizationType='TRUST', street='Street2', zipCode='zipCode2'}, isSilent=false}
+2022-05-01 18:05:43,958 INFO Server [main] Client request:Request{command='show', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 18:05:43,963 INFO Server [main] Client request:Request{command='info', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 18:05:43,964 INFO Server [main] Client request:Request{command='remove_by_id', args=[1], fieldsWrapper=null, isSilent=false}
+2022-05-01 18:05:43,965 INFO Server [main] Client request:Request{command='show', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 18:05:43,967 INFO Server [main] Client request:Request{command='info', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 18:05:43,968 INFO Server [main] Client request:Request{command='clear', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 18:05:43,969 INFO Server [main] Client request:Request{command='show', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 18:05:43,970 INFO Server [main] Client request:Request{command='info', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 18:05:43,972 INFO Server [main] Client request:Request{command='add', args=[], fieldsWrapper=FieldsWrapper{name='Name', x=1.0, y=2.0, annualTurnover=3, employeesCount=4, organizationType='PUBLIC', street='Street', zipCode='zipCode'}, isSilent=false}
+2022-05-01 18:05:43,973 INFO Server [main] Client request:Request{command='show', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 18:05:43,975 INFO Server [main] Client request:Request{command='info', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 18:05:43,978 INFO Server [main] Client request:Request{command='add_if_max', args=[], fieldsWrapper=FieldsWrapper{name='Name1', x=1.0, y=2.0, annualTurnover=3, employeesCount=1000, organizationType='PUBLIC', street='Street1', zipCode='zipCode1'}, isSilent=false}
+2022-05-01 18:05:43,979 INFO Server [main] Client request:Request{command='show', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 18:05:43,981 INFO Server [main] Client request:Request{command='info', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 18:05:43,983 INFO Server [main] Client request:Request{command='add_if_max', args=[], fieldsWrapper=FieldsWrapper{name='Name2', x=1.0, y=2.0, annualTurnover=3, employeesCount=2, organizationType='PUBLIC', street='Street2', zipCode='zipCode2'}, isSilent=false}
+2022-05-01 18:05:43,983 INFO Server [main] Client request:Request{command='show', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 18:05:43,985 INFO Server [main] Client request:Request{command='info', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 18:05:43,987 INFO Server [main] Client request:Request{command='add_if_min', args=[], fieldsWrapper=FieldsWrapper{name='Name3', x=1.0, y=2.0, annualTurnover=3, employeesCount=100, organizationType='TRUST', street='Street3', zipCode='zipCode3'}, isSilent=false}
+2022-05-01 18:05:43,988 INFO Server [main] Client request:Request{command='show', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 18:05:43,992 INFO Server [main] Client request:Request{command='info', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 18:05:43,993 INFO Server [main] Client request:Request{command='add_if_min', args=[], fieldsWrapper=FieldsWrapper{name='Name4', x=1.0, y=2.0, annualTurnover=3, employeesCount=1, organizationType='PUBLIC', street='Street4', zipCode='zipCode4'}, isSilent=false}
+2022-05-01 18:05:43,994 INFO Server [main] Client request:Request{command='show', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 18:05:43,997 INFO Server [main] Client request:Request{command='info', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 18:05:43,999 INFO Server [main] Client request:Request{command='remove_greater', args=[], fieldsWrapper=FieldsWrapper{name='Name0', x=1.0, y=2.0, annualTurnover=3, employeesCount=20, organizationType='TRUST', street='Street0', zipCode='zipCode0'}, isSilent=false}
+2022-05-01 18:05:44,001 INFO Server [main] Client request:Request{command='show', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 18:05:44,002 INFO Server [main] Client request:Request{command='info', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 18:05:44,003 INFO Server [main] Client request:Request{command='sum_of_annual_turnover', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 18:05:44,004 INFO Server [main] Client request:Request{command='print_descending', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 18:05:44,007 INFO Server [main] Client request:Request{command='print_field_ascending_employees_count', args=[], fieldsWrapper=null, isSilent=false}
+2022-05-01 18:05:53,715 INFO u.f.Saver [main] Коллекция сохранена.
+2022-05-01 18:05:53,715 INFO Server [main] Client request:Request{command='exit', args=[], fieldsWrapper=null, isSilent=false}
