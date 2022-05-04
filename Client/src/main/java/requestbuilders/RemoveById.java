@@ -3,20 +3,21 @@ package requestbuilders;
 import requestbuilders.exceptions.WrongArgumentsException;
 import exchange.request.Request;
 import requestbuilders.exceptions.WrongArgumentsNumberException;
-import util.Communicator;
 import talkers.Talker;
+import util.transceiving.Receiver;
+import util.transceiving.Sender;
 
+/**
+ * Класс сборщик запроса для запроса на сервер по команде RemoveById
+ */
 public class RemoveById extends RequestBuilder {
-    public static String name = "remove_by_id";
-    public static int argsNumber = 1;
-    private final Talker talker;
-    private final boolean isScript;
-    private final Communicator communicator;
-
-    public RemoveById(Talker talker, boolean isScript, Communicator communicator) {
+    public RemoveById(Talker talker, boolean isScript, Sender sender, Receiver receiver) {
+        this.name = "remove_by_id";
+        this.argsNumber = 1;
         this.talker = talker;
         this.isScript = isScript;
-        this.communicator = communicator;
+        this.sender = sender;
+        this.receiver = receiver;
     }
 
     @Override
@@ -28,6 +29,6 @@ public class RemoveById extends RequestBuilder {
         } catch (NumberFormatException e) {
             throw new WrongArgumentsException("Неверный формат ID");
         }
-        communicator.execute(new Request(name, args, null));
+        if (sender.send(new Request(name, args, null))) receiver.receive();
     }
 }

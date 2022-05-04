@@ -7,17 +7,23 @@ import exchange.request.Request;
 import exchange.response.Response;
 import util.CollectionManager;
 import util.ElementAssembler;
+import util.transceiving.Sender;
+
+import java.net.SocketAddress;
 
 /**
  * Класс команды AddIfMax
  */
 public class AddIfMax extends Command {
-    public static String name = "add_if_max";
-    public static String help = "Добавить новый элемент в коллекцию, если его значение превышает значение наибольшего элемента этой коллекции";
-    public static int argsNumber = 0;
+    public AddIfMax(Sender sender) {
+        this.name = "add_if_max";
+        this.help = "Добавить новый элемент в коллекцию, если его значение превышает значение наибольшего элемента этой коллекции";
+        this.argsNumber = 0;
+        this.sender = sender;
+    }
 
     @Override
-    public Response execute(Request request) {
+    public void execute(SocketAddress socketAddress, Request request) {
         if (request.getArgs().length != argsNumber) throw new IllegalArgsNumberRequestException(String.valueOf(argsNumber));
         if (request.getFieldsWrapper() == null) throw new IllegalFieldWrapperRequestException("отсутствует передаваемый элемент");
         Organization elem = ElementAssembler.assemble(request.getFieldsWrapper());
@@ -25,9 +31,9 @@ public class AddIfMax extends Command {
         Organization max = collectionManager.getMax();
         if (max == null || elem.compareTo(max) > 0) {
             collectionManager.add(elem);
-            return new Response("Элемент добавлен", true);
+            sender.send(socketAddress, new Response("Элемент добавлен", true));
         } else {
-            return new Response("Элемент не был добавлен.", true);
+            sender.send(socketAddress, new Response("Элемент не был добавлен.", true));
         }
     }
 }

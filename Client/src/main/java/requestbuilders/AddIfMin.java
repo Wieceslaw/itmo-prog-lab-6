@@ -1,29 +1,32 @@
 package requestbuilders;
 
-import util.Communicator;
 import talkers.Talker;
 import util.Constructor;
 import exchange.request.Request;
 import exchange.request.FieldsWrapper;
 import requestbuilders.exceptions.WrongArgumentsNumberException;
+import util.transceiving.Receiver;
+import util.transceiving.Sender;
 
+/**
+ * Класс сборщик запроса для запроса на сервер по команде AddIfMin
+ */
 public class AddIfMin extends RequestBuilder {
-    public static String name = "add_if_min";
-    public static int argsNumber = 0;
-    private final Talker talker;
-    private final boolean isScript;
-    private final Communicator communicator;
-
-    public AddIfMin(Talker talker, boolean isScript, Communicator communicator) {
+    private final Constructor constructor;
+    public AddIfMin(Talker talker, boolean isScript, Sender sender, Receiver receiver) {
+        this.name = "add_if_min";
+        this.argsNumber = 0;
         this.talker = talker;
         this.isScript = isScript;
-        this.communicator = communicator;
+        this.sender = sender;
+        this.constructor = new Constructor(talker, isScript);
+        this.receiver = receiver;
     }
 
     @Override
     public void execute(String[] args) throws WrongArgumentsNumberException {
         if (args.length != argsNumber) throw new WrongArgumentsNumberException(String.valueOf(argsNumber));
-        FieldsWrapper fieldsWrapper = Constructor.construct(talker, isScript);
-        communicator.execute(new Request(name, args, fieldsWrapper));
+        FieldsWrapper fieldsWrapper = constructor.construct();
+        if (sender.send(new Request(name, args, fieldsWrapper))) receiver.receive();
     }
 }

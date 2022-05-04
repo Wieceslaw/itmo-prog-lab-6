@@ -7,22 +7,28 @@ import exchange.request.Request;
 import exchange.response.Response;
 import util.CollectionManager;
 import util.ElementAssembler;
+import util.transceiving.Sender;
+
+import java.net.SocketAddress;
 
 /**
  * Класс команды Add
  */
 public class Add extends Command {
-    public static String name = "add";
-    public static String help = "Добавить новый элемент в коллекцию";
-    public static int argsNumber = 0;
+    public Add(Sender sender) {
+        this.name = "add";
+        this.help = "Добавить новый элемент в коллекцию";
+        this.argsNumber = 0;
+        this.sender = sender;
+    }
 
     @Override
-    public Response execute(Request request) {
+    public void execute(SocketAddress socketAddress, Request request) {
         if (request.getArgs().length != argsNumber) throw new IllegalArgsNumberRequestException(String.valueOf(argsNumber));
         if (request.getFieldsWrapper() == null) throw new IllegalFieldWrapperRequestException("отсутствует передаваемый элемент");
         Organization element = ElementAssembler.assemble(request.getFieldsWrapper());
         CollectionManager collectionManager = CollectionManager.getInstance();
         collectionManager.add(element);
-        return new Response("Элемент успешно добавлен.", true);
+        sender.send(socketAddress, new Response("Элемент успешно добавлен.", true));
     }
 }

@@ -4,34 +4,32 @@ import commands.exceptions.IllegalArgsNumberRequestException;
 import commands.exceptions.IllegalFieldWrapperRequestException;
 import exchange.request.Request;
 import exchange.response.Response;
+import util.CommandSelector;
+import util.transceiving.Sender;
+
+import java.net.SocketAddress;
 
 /**
  * Класс команды Help
  */
 public class Help extends Command {
-    public static String name = "help";
-    public static String help = "Вывести справку по доступным командам";
-    public static int argsNumber = 0;
+    public Help(Sender sender) {
+        this.name = "help";
+        this.help = "Вывести справку по доступным командам";
+        this.argsNumber = 0;
+        this.sender = sender;
+    }
 
     @Override
-    public Response execute(Request request) {
+    public void execute(SocketAddress socketAddress, Request request) {
         if (request.getArgs().length != argsNumber) throw new IllegalArgsNumberRequestException(String.valueOf(argsNumber));
         if (request.getFieldsWrapper() != null) throw new IllegalFieldWrapperRequestException("команда не принимает элемент");
-        String helpDescription = Help.name + ": " + Help.help + '\n' +
-                Info.name + ": " + Info.help + '\n' +
-                Show.name + ": " + Show.help + '\n' +
-                Add.name + ": " + Add.help + '\n' +
-                Update.name + ": " + Update.help + '\n' +
-                RemoveById.name + ": " + RemoveById.help + '\n' +
-                Clear.name + ": " + Clear.help + '\n' +
-                Exit.name + ": " + Exit.help + '\n' +
-                ExecuteScript.name + ": " + ExecuteScript.help + '\n' +
-                AddIfMax.name + ": " + AddIfMax.help + '\n' +
-                AddIfMin.name + ": " + AddIfMin.help + '\n' +
-                RemoveGreater.name + ": " + RemoveGreater.help + '\n' +
-                SumOfAnnualTurnover.name + ": " + SumOfAnnualTurnover.help + '\n' +
-                PrintDescending.name + ": " + PrintDescending.help + '\n' +
-                PrintFieldAscendingEmployeesCount.name + ": " + PrintFieldAscendingEmployeesCount.help;
-        return new Response(helpDescription, true);
+        CommandSelector commandSelector = new CommandSelector(sender);
+        StringBuilder helpDesc = new StringBuilder();
+        for(Command command : commandSelector.getCommands()) {
+            if (command.name != "save") helpDesc.append(command.name).append(": ").append(command.help).append('\n');
+        }
+        helpDesc.deleteCharAt(helpDesc.length() - 1);
+        sender.send(socketAddress, new Response(helpDesc.toString(), true));
     }
 }

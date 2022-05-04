@@ -3,35 +3,36 @@ package talkers;
 import java.io.Console;
 
 /**
- * Класс-обертка для общения с пользователем через консоль
+ * Класс-обертка для общения с пользователем через {@link Console}
  */
 public class ConsoleTalker implements Talker {
-    private static ConsoleTalker consoleTalker;
     Console console;
 
-    private ConsoleTalker() {
+    /**
+     * Конструктор класса с вызовом системной консоли
+     */
+    public ConsoleTalker() {
         this.console = System.console();
-    }
-
-    public static ConsoleTalker getInstance() {
-        if (consoleTalker == null) {
-            consoleTalker = new ConsoleTalker();
-        }
-        return consoleTalker;
     }
 
     @Override
     public String read() {
-        return null;
+        return console.readLine();
     }
 
     @Override
     public void println(String str) {
-        ;
+        console.printf(str + '\n');
     }
 
     @Override
     public void print(String str) {
-        ;
+        console.printf(str);
+    }
+
+    @Override
+    public String readCommand() {
+        print("Введите команду: ");
+        return read();
     }
 }

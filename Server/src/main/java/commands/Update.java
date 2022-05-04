@@ -7,17 +7,23 @@ import exchange.request.Request;
 import exchange.response.Response;
 import util.CollectionManager;
 import util.ElementAssembler;
+import util.transceiving.Sender;
+
+import java.net.SocketAddress;
 
 /**
  * Класс команды Update
  */
 public class Update extends Command {
-    public static String name = "update";
-    public static String help = "Обновить значение элемента коллекции, id которого равен заданному";
-    public static int argsNumber = 1;
+    public Update(Sender sender) {
+        this.name = "update";
+        this.help = "Обновить значение элемента коллекции, id которого равен заданному";
+        this.argsNumber = 1;
+        this.sender = sender;
+    }
 
     @Override
-    public Response execute(Request request) {
+    public void execute(SocketAddress socketAddress, Request request) {
         if (request.getArgs().length != argsNumber) throw new IllegalArgsNumberRequestException(String.valueOf(argsNumber));
         if (request.getFieldsWrapper() == null) throw new IllegalFieldWrapperRequestException("отсутствует передаваемый элемент");
         CollectionManager collectionManager = CollectionManager.getInstance();
@@ -28,6 +34,6 @@ public class Update extends Command {
         Organization organization = ElementAssembler.assemble(request.getFieldsWrapper());
         organization.setId(id);
         collectionManager.add(organization);
-        return new Response("Элемент обновлен.", true);
+        sender.send(socketAddress, new Response("Элемент обновлен.", true));
     }
 }

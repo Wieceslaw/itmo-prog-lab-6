@@ -36,4 +36,10 @@ public class ScannerTalker implements Talker {
     public void print(String str) {
         System.out.print(str);
     }
+
+    @Override
+    public String readCommand() {
+        print("Введите команду: ");
+        return read();
+    }
 }

@@ -7,22 +7,44 @@ import exceptions.WrongCommandLineArgumentsException;
 import talkers.Talker;
 import java.util.NoSuchElementException;
 
-
+/**
+ * Класс для получения и валидации полей класса {@link elements.Organization Organization}
+ */
 public class Constructor {
-    public static FieldsWrapper construct(Talker talker, boolean isScript) throws ElementConstructorException {
+    private Talker talker;
+    private boolean isScript;
+
+    public Constructor(Talker talker, boolean isScript) {
+        this.talker = talker;
+        this.isScript = isScript;
+    }
+
+    /**
+     * Собрать объект {@link elements.Organization организации}
+     *
+     * @return собранный объект {@link elements.Organization Organisation}
+     * @throws ElementConstructorException
+     * ошибка сборки объекта класса {@link elements.Organization Organisation}
+     */
+    public FieldsWrapper construct() throws ElementConstructorException {
         return new FieldsWrapper(
-                getName(talker, isScript),
-                getX(talker, isScript),
-                getY(talker, isScript),
-                getAnnualTurnover(talker, isScript),
-                getEmployeesCount(talker, isScript),
-                getType(talker, isScript),
-                getStreet(talker, isScript),
-                getZipCode(talker, isScript)
+                getName(),
+                getX(),
+                getY(),
+                getAnnualTurnover(),
+                getEmployeesCount(),
+                getType(),
+                getStreet(),
+                getZipCode()
         );
     }
 
-    private static String getName(Talker talker, boolean isScript) {
+    /**
+     * Получить имя
+     *
+     * @return имя {@link elements.Organization Organisation}
+     */
+    private String getName() {
         if (!isScript) talker.print("Введите название организации (непустая, строка): ");
         String name;
         try {
@@ -37,12 +59,17 @@ public class Constructor {
             System.exit(1);
         } catch (Exception e) {
             if (!isScript) talker.println("Ошибка ввода: введите корректное значение.");
-            return getName(talker, isScript);
+            return getName();
         }
         return name;
     }
 
-    private static Double getX(Talker talker, boolean isScript) {
+    /**
+     * Получить координату X
+     *
+     * @return координата X {@link elements.Coordinates Coordinates}
+     */
+    private Double getX() {
         if (!isScript) talker.print("Введите координату x организации (непустая, double, не больше 76): ");
         Double x;
         try {
@@ -56,13 +83,18 @@ public class Constructor {
             x = null;
             System.exit(1);
         } catch (Exception e) {
-            if (!isScript) talker.println("Ошибка ввода: введите корректное значение. " + e);
-            return getX(talker, isScript);
+            if (!isScript) talker.println("Ошибка ввода: введите корректное значение. ");
+            return getX();
         }
         return x;
     }
 
-    private static Float getY(Talker talker, boolean isScript) {
+    /**
+     * Получить координату Y
+     *
+     * @return координата Y {@link elements.Coordinates Coordinates}
+     */
+    private Float getY() {
         if (!isScript) talker.print("Введите координату y организации (непустая, float): ");
         Float y;
         try {
@@ -74,12 +106,17 @@ public class Constructor {
             System.exit(1);
         } catch (Exception e) {
             if (!isScript) talker.println("Ошибка ввода: введите корректное значение.");
-            return getY(talker, isScript);
+            return getY();
         }
         return y;
     }
 
-    private static Integer getAnnualTurnover(Talker talker, boolean isScript) {
+    /**
+     * Получить годовой оборот
+     *
+     * @return годовой оборот {@link elements.Organization Organisation}
+     */
+    private Integer getAnnualTurnover() {
         if (!isScript) talker.print("Введите годовой оборот annualTurnover организации (integer, больше 0): ");
         Integer annualTurnover;
         try {
@@ -97,12 +134,17 @@ public class Constructor {
             System.exit(1);
         } catch (Exception e) {
             if (!isScript) talker.println("Ошибка ввода: введите корректное значение.");
-            return getAnnualTurnover(talker, isScript);
+            return getAnnualTurnover();
         }
         return annualTurnover;
     }
 
-    private static int getEmployeesCount(Talker talker, boolean isScript) {
+    /**
+     * Получить количество сотрудников
+     *
+     * @return количество сотрудников {@link elements.Organization Organisation}
+     */
+    private int getEmployeesCount() {
         if (!isScript) talker.print("Введите количество сотрудников employeesCount организации (int, больше 0): ");
         int employeesCount;
         try {
@@ -117,12 +159,17 @@ public class Constructor {
             System.exit(1);
         } catch (Exception e) {
             if (!isScript) talker.println("Ошибка ввода: введите корректное значение.");
-            return getEmployeesCount(talker, isScript);
+            return getEmployeesCount();
         }
         return employeesCount;
     }
 
-    private static OrganizationType getType(Talker talker, boolean isScript) {
+    /**
+     * Получить тип организации
+     *
+     * @return тип организации {@link OrganizationType OrganisationType}
+     */
+    private OrganizationType getType() {
         if (!isScript) talker.print("Введите тип организации type организации (один из: COMMERCIAL, PUBLIC, TRUST, PRIVATE_LIMITED_COMPANY, OPEN_JOINT_STOCK_COMPANY): ");
         OrganizationType type;
         try {
@@ -137,12 +184,17 @@ public class Constructor {
             System.exit(1);
         } catch (Exception e) {
             if (!isScript) talker.println("Ошибка ввода: введите корректное значение.");
-            return getType(talker, isScript);
+            return getType();
         }
         return type;
     }
 
-    private static String getStreet(Talker talker, boolean isScript) {
+    /**
+     * Получить имя улицы
+     *
+     * @return имя улицы {@link elements.Address Address}
+     */
+    private String getStreet() {
         if (!isScript) talker.print("Введите название улицы street организации (строка): ");
         String street;
         try {
@@ -154,12 +206,17 @@ public class Constructor {
             System.exit(1);
         } catch (Exception e) {
             if (!isScript) talker.println("Ошибка ввода: введите корректное значение.");
-            return getStreet(talker, isScript);
+            return getStreet();
         }
         return street;
     }
 
-    private static String getZipCode(Talker talker, boolean isScript) {
+    /**
+     * Получить зип код
+     *
+     * @return зип код {@link elements.Address Address}
+     */
+    private String getZipCode() {
         if (!isScript) talker.print("Введите зип код zipCode организации (строка): ");
         String zipCode;
         try {
@@ -171,7 +228,7 @@ public class Constructor {
             System.exit(1);
         } catch (Exception e) {
             if (!isScript) talker.println("Ошибка ввода: введите корректное значение.");
-            return getZipCode(talker, isScript);
+            return getZipCode();
         }
         return zipCode;
     }

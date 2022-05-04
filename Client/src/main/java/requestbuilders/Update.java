@@ -4,21 +4,24 @@ import requestbuilders.exceptions.WrongArgumentsException;
 import exchange.request.FieldsWrapper;
 import exchange.request.Request;
 import requestbuilders.exceptions.WrongArgumentsNumberException;
-import util.Communicator;
 import talkers.Talker;
 import util.Constructor;
+import util.transceiving.Receiver;
+import util.transceiving.Sender;
 
+/**
+ * Класс сборщик запроса для запроса на сервер по команде Update
+ */
 public class Update extends RequestBuilder {
-    public static String name = "update";
-    public static int argsNumber = 1;
-    private final Talker talker;
-    private final boolean isScript;
-    private final Communicator communicator;
-
-    public Update(Talker talker, boolean isScript, Communicator communicator) {
+    private final Constructor constructor;
+    public Update(Talker talker, boolean isScript, Sender sender, Receiver receiver) {
+        this.name = "update";
+        this.argsNumber = 1;
         this.talker = talker;
         this.isScript = isScript;
-        this.communicator = communicator;
+        this.sender = sender;
+        this.constructor = new Constructor(talker, isScript);
+        this.receiver = receiver;
     }
 
     @Override
@@ -30,7 +33,6 @@ public class Update extends RequestBuilder {
         } catch (NumberFormatException e) {
             throw new WrongArgumentsException("Неверный формат ID");
         }
-        FieldsWrapper fieldsWrapper = Constructor.construct(talker, isScript);
-        communicator.execute(new Request(name, args, fieldsWrapper));
+        if (sender.send(new Request(name, args, constructor.construct()))) receiver.receive();
     }
 }

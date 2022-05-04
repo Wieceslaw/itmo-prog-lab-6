@@ -4,10 +4,10 @@ import elements.*;
 import exchange.request.FieldsWrapper;
 public class ElementAssembler {
     /**
-     * Конвертирует оболочку {@code FieldsWrapper} в класс {@code Organisation}
+     * Конвертирует оболочку {@link FieldsWrapper} в класс {@link Organization}
      *
      * @param fieldsWrapper оболочка с полями класса
-     * @return элемента класса {@code Organisation}
+     * @return элемента класса {@link Organization}
      */
     public static Organization assemble(FieldsWrapper fieldsWrapper) {
         return new Organization(
